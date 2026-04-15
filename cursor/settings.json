@@ -1,0 +1,318 @@
+{
+    "editor.fontSize": 18,
+    "vim.sneak": true,
+    "vim.sneakReplacesF": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "vim.useSystemClipboard": true,
+    "vim.leader": " ",
+    "remote.SSH.remotePlatform": {},
+    "vim.easymotion": true,
+    "vim.statusBarColors.easymotionmode": "",
+    "vim.replaceWithRegister": true,
+
+    "vim.normalModeKeyBindings": [
+        // splits
+        {
+        "before": ["-"],
+        "commands": ["vsnetrw.open"],
+        "when": "editorLangId != vsnetrw"
+        },
+        {
+        "before": ["<leader>", ";"],
+        "commands": ["workbench.action.showCommands"],
+        "silent": true
+        },
+        {
+            "before": ["<leader>", "m"],
+            "commands": ["bookmarks.toggle"]
+        },
+        {
+            "before": ["<leader>", "b"],
+            "commands": ["bookmarks.list"]
+        },
+        // {
+        //     "before": ["leader", "w"],
+        //     "commands": ["workbench.action.files.save"]
+        // }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "u"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "undo"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<C-r>"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "redo"
+                }
+            ]
+        },
+        { "before": ["<S-E>"], "commands": [":bprevious"] },
+        { "before": ["<S-R>"], "commands": [":bnext"] },
+        {
+        "before": ["leader", "v"],
+        "commands": [":vsplit"],
+        },
+        {
+        "before": ["leader", "s"],
+        "commands": [":split"],
+        },
+
+        // panes
+        {
+        "before": ["leader", "h"],
+        "commands": ["workbench.action.focusLeftGroup"]
+        },
+        {
+        "before": ["leader", "j"],
+        "commands": ["workbench.action.focusBelowGroup"]
+        },
+        {
+        "before": ["leader", "k"],
+        "commands": ["workbench.action.focusAboveGroup"]
+        },
+        {
+        "before": ["leader", "l"],
+        "commands": ["workbench.action.focusRightGroup"]
+        },
+        // NICE TO HAVE
+        { "before": ["leader", "w"], "commands": [":w!"] },
+        { "before": ["leader", "q"], "commands": [":q!"] },
+        { "before": ["leader", "x"], "commands": [":x!"] },
+        {
+            "before": ["<leader>", "c", "f"],
+            "commands": ["editor.action.quickFix"]
+        },
+        { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
+        { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+    ],
+    // "vim.insertModeKeyBindings": [
+    //     {
+    //         "before": [
+    //             "j",
+    //             "j"
+    //         ],
+    //         "after": [
+    //             "<Esc>"
+    //         ]
+    //     }
+    // ],
+    "vim.operatorPendingModeKeyBindings": [
+        {
+            "before": ["L"],
+            "after": ["$"]
+        },
+        {
+            "before": ["H"],
+            "after": ["^"]
+        }
+    ],
+
+    "vim.visualModeKeyBindings": [
+        // Stay in visual mode while indenting
+        { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+        { "before": [">"], "commands": ["editor.action.indentLines"] },
+        // Move selected lines while staying in visual mode
+        { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+        { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+        // toggle comment selection
+        { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+    ],
+
+    "vim.handleKeys": {
+    
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "settingsSync.ignoredExtensions": [
+        "github.copilot",
+        "github.copilot-chat"
+    ],
+    "remote.autoForwardPortsSource": "hybrid",
+    "vim.statusBarColors.easymotioninputmode": "",
+    "diffEditor.maxComputationTime": 0,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "none",
+    "vim.camelCaseMotion.enable": true,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "github.copilot.editor.enableAutoCompletions": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "editor.wordWrapColumn": 120,
+    "cursor.cpp.disabledLanguages": [
+        "plaintext",
+        "markdown",
+        "scminput"
+    ],
+    "cursor.cpp.enablePartialAccepts": true,
+    "jupyter.interactiveWindow.creationMode": "perFile",
+    "editor.wordWrap": "on",
+    "jupyter.askForKernelRestart": false,
+    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+    "vim.commandLineModeKeyBindings": [
+
+        
+    ],
+    "python.languageServer": "None",
+    "accessibility.signals.chatEditModifiedFile": {
+        "sound": "off"
+    },
+    "accessibility.signals.lineHasBreakpoint": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.chatRequestSent": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.chatResponseReceived": {
+        "sound": "off"
+    },
+    "accessibility.signals.clear": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.codeActionApplied": {
+        "sound": "off"
+    },
+    "accessibility.signals.codeActionTriggered": {
+        "sound": "off"
+    },
+    "accessibility.signals.onDebugBreak": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.diffLineDeleted": {
+        "sound": "off"
+    },
+    "accessibility.signals.diffLineInserted": {
+        "sound": "off"
+    },
+    "accessibility.signals.diffLineModified": {
+        "sound": "off"
+    },
+    "accessibility.signals.editsKept": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.positionHasError": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.lineHasError": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.lineHasFoldedArea": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.lineHasInlineSuggestion": {
+        "sound": "off"
+    },
+    "accessibility.signals.noInlayHints": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.notebookCellCompleted": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.notebookCellFailed": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.progress": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.taskCompleted": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.taskFailed": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.terminalBell": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.terminalCommandFailed": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.terminalCommandSucceeded": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.terminalQuickFix": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.editsUndone": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.voiceRecordingStarted": {
+        "sound": "off"
+    },
+    "accessibility.signals.voiceRecordingStopped": {
+        "sound": "off"
+    },
+    "accessibility.signals.positionHasWarning": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.lineHasWarning": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "editor.accessibilitySupport": "on",
+    "explorer.autoRevealExclude": {
+        "**/.venv/**": true,
+        "**/site-packages/**": true,
+        "**/venv/**": true
+    },
+    "vim.commandLineModeKeyBindingsNonRecursive": [
+
+    ],
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "files.autoSave": "afterDelay",
+    "claudeCode.preferredLocation": "panel",
+    "files.exclude": {
+        ".ruff_cache": true,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/*.egg-info": true,
+        "**/*.pyc": true
+    }
+}

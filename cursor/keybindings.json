@@ -1,0 +1,266 @@
+// curated shortcuts using hyper key (ctrl+shift+alt+meta) for navigating
+// requires single hyper key using custom keyboard or use:
+// https://gist.github.com/nat-418/135a62fb9f37cc87cd70af1ab72e276a
+//
+// be warned that you may need to remove or change some emoji/unicode
+// bindings in ibus-setup as i found these clashed on redhat and ubuntu
+[
+    // error navigation
+    {
+        "key": "ctrl+shift+alt+meta+,",
+        "command": "editor.action.marker.prev",
+        "when": "editorfocus"
+    },
+    {
+        "key": "ctrl+shift+alt+meta+,",
+        "command": "workbench.action.compareeditor.previouschange",
+        "when": "textcompareeditorvisible"
+    },
+    // workbench navigation
+    {
+        "key": "ctrl+shift+alt+meta+h",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+shift+alt+meta+l",
+        "command": "workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+shift+alt+meta+k",
+        "command": "workbench.action.focusAboveGroup"
+    },
+    {
+        "key": "ctrl+shift+alt+meta+j",
+        "command": "workbench.action.focusBelowGroup"
+    },
+
+    // easier jumps to side bar items using hyper key plus left hand top row,
+    // a, d, f
+    //
+    //  hyper plus:
+    //  a = activity bar (which can access the rest using arrows
+    //  d = debug
+    //  e = explorer
+    //  r / f = repositories / source control
+    // rest of top row left hand:
+    //  q = extensions, w = timeline, t = testing
+
+    {
+        "key": "shift+alt+ctrl+shift+meta+f",
+        "command": "workbench.action.focusactivitybar"
+    },
+    {
+        "key": "alt+ctrl+shift+meta+e",
+        "command": "workbench.view.explorer",
+    },
+    {
+        "key": "alt+ctrl+shift+meta+r",
+        "command": "workbench.scm.repositories.focus"
+    },
+    {
+        // scm is the key below source repositories like it is in the panel
+        "key": "shift+alt+ctrl+shift+meta+g",
+        "command": "workbench.view.scm",
+    },
+    {
+        "key": "alt+ctrl+shift+meta+d",
+        "command": "workbench.view.debug",
+    },
+    {
+        "key": "alt+ctrl+shift+meta+t",
+        "command": "workbench.view.testing.focus",
+    },
+    {
+        "key": "alt+ctrl+shift+meta+q",
+        "command": "workbench.view.extensions",
+    },
+    {
+        "key": "cmd+'",
+        "command": "workbench.action.terminal.toggleterminal",
+        "when": "terminal.active"
+    },
+    // navigate buffers
+    {
+        "key": "ctrl+shift+alt+meta+m",
+        "command": "workbench.action.nexteditor"
+    },
+
+    // editor resize  ----------------------------------------------------------
+    {
+        "key": "ctrl+shift+alt+meta+i",
+        "command": "workbench.action.increaseViewHeight",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+meta+u",
+        "command": "workbench.action.decreaseViewHeight",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+meta+o",
+        "command": "workbench.action.increaseViewWidth",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+meta+y",
+        "command": "workbench.action.decreaseViewWidth",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "shift+alt+0",
+        "command": "editor.action.inlineSuggest.showNext",
+        "when": "inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "alt+]",
+        "command": "-editor.action.inlineSuggest.showNext",
+        "when": "inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+9",
+        "command": "editor.action.inlineSuggest.showPrevious",
+        "when": "inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "alt+[",
+        "command": "-editor.action.inlineSuggest.showPrevious",
+        "when": "inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "alt+=",
+        "command": "editor.action.inlineSuggest.acceptNextWord",
+        "when": "cppSuggestion && !editorReadonly || inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "cmd+right",
+        "command": "-editor.action.inlineSuggest.acceptNextWord",
+        "when": "cppSuggestion && !editorReadonly || inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "alt+down",
+        "command": "-editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+down",
+        "command": "-notebook.cell.moveDown",
+        "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "alt+down",
+        "command": "-editor.action.pageDownHover",
+        "when": "editorHoverFocused"
+    },
+    {
+        "key": "alt+up",
+        "command": "-editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+up",
+        "command": "-notebook.cell.moveUp",
+        "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "alt+up",
+        "command": "-editor.action.pageUpHover",
+        "when": "editorHoverFocused"
+    },
+    {
+        "key": "alt+up",
+        "command": "-showPrevParameterHint",
+        "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    },
+    {
+        "key": "alt+up",
+        "command": "-scm.forceViewPreviousCommit",
+        "when": "scmRepository"
+    },
+    {
+        "key": "alt+up",
+        "command": "-list.focusAnyUp",
+        "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+    },
+    {
+        "key": "alt+up",
+        "command": "-history.showPrevious",
+        "when": "historyNavigationBackwardsEnabled && historyNavigationWidgetFocus && !isComposing && !suggestWidgetVisible"
+    },
+    {
+        "key": "alt+up",
+        "command": "-workbench.action.terminal.accessibleBufferGoToPreviousCommand",
+        "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+    },
+    {
+        "key": "alt+down",
+        "command": "-workbench.action.terminal.accessibleBufferGoToNextCommand",
+        "when": "accessibleViewIsShown && accessibleViewCurrentProviderId == 'terminal' || accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+    },
+    {
+        "key": "alt+]",
+        "command": "editor.action.inlineSuggest.acceptNextLine"
+    },
+    {
+        "key": "cmd+r cmd+r",
+        "command": "jupyter.restartkernel"
+    },
+    {
+        "key": "cmd+i",
+        "command": "composerMode.agent"
+    },
+    {
+        "key": "ctrl+shift+alt+cmd+v",
+        "command": "workbench.view.extension.inspect_ai-activity-bar"
+    },
+    {
+        "key": "alt+cmd+s",
+        "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
+        "when": "cursor.agentIdeUnification.enabled == true && !isAuxiliaryWindowFocusedContext"
+    },
+    // {
+    //     "key": "alt+ctrl+shift+meta+n",
+    //     "command": "workbench.action.evenEditorWidths",
+    //     "when": "!terminalFocus"
+    // },
+
+    // {
+    //     "key": "ctrl+shift+alt+cmd+enter",
+    //     "command": "github.copilot.generate",
+    //     "when": "editortextfocus && github.copilot.activated && !commenteditorfocused && !ininteractiveinput && !interactiveeditorfocused"
+    // },
+    // {
+    //     "key": "ctrl+enter",
+    //     "command": "-github.copilot.generate",
+    //     "when": "editortextfocus && github.copilot.activated && !commenteditorfocused && !ininteractiveinput && !interactiveeditorfocused"
+    // },
+    // {
+    //     "key": "k",
+    //     "command": "github.copilot.previouspanelsolution",
+    //     "when": "github.copilot.activated && github.copilot.panelvisible && activewebviewpanelid == 'github copilot suggestions'"
+    // },
+    // {
+    //     "key": "alt+[",
+    //     "command": "-github.copilot.previouspanelsolution",
+    //     "when": "github.copilot.activated && github.copilot.panelvisible && activewebviewpanelid == 'github copilot suggestions'"
+    // },
+    // {
+    //     "key": "j",
+    //     "command": "github.copilot.nextpanelsolution",
+    //     "when": "github.copilot.activated && github.copilot.panelvisible && activewebviewpanelid == 'github copilot suggestions'"
+    // },
+    // {
+    //     "key": "alt+]",
+    //     "command": "-github.copilot.nextpanelsolution",
+    //     "when": "github.copilot.activated && github.copilot.panelvisible && activewebviewpanelid == 'github copilot suggestions'"
+    // },
+    // {
+    //     "key": "ctrl+shift+alt+cmd+enter",
+    //     "command": "github.copilot.acceptcursorpanelsolution",
+    //     "when": "github.copilot.activated && github.copilot.panelvisible && activewebviewpanelid == 'github copilot suggestions'"
+    // },
+    // {
+    //     "key": "ctrl+/",
+    //     "command": "-github.copilot.acceptcursorpanelsolution",
+    //     "when": "github.copilot.activated && github.copilot.panelvisible && activewebviewpanelid == 'github copilot suggestions'"
+    // }
+]

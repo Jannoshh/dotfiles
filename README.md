@@ -49,6 +49,69 @@ Apply changes to ~/.zshrc?
 * Any aliases you need, add them to the [config/aliases.sh](./config/aliases.sh) script. Try adding your own alias to the bottom of the file. For example, try setting `cd1` to your most used git repo so you can just type `cd1` to get to it.
 * Any setup you do in a new RunPod, add it to [runpod/runpod_setup.sh](./runpod/runpod_setup.sh).
 
+## Cursor
+
+Cursor `settings.json` and `keybindings.json` (which include the Vim plugin config and hyper-key shortcuts) live in [`./cursor`](./cursor). To apply them:
+
+```bash
+# macOS
+cp ./cursor/settings.json "$HOME/Library/Application Support/Cursor/User/settings.json"
+cp ./cursor/keybindings.json "$HOME/Library/Application Support/Cursor/User/keybindings.json"
+
+# Install the extension list
+xargs -n1 cursor --install-extension < ./cursor/extensions.txt
+```
+
+To re-export the extension list after installing new ones: `cursor --list-extensions > ./cursor/extensions.txt`.
+
+## iTerm2
+
+Visual-only setup — font, colors, cursor, scrollback, window sizing. No keybindings, commands, or machine-specific state.
+
+- [`./iterm/DynamicProfile-default.json`](./iterm/DynamicProfile-default.json) — an iTerm2 *Dynamic Profile*. Copy or symlink it into `~/Library/Application Support/iTerm2/DynamicProfiles/` and iTerm2 will pick it up automatically on next launch. Appears as the profile named `dotfiles-default`.
+- [`./iterm/onedark.itermcolors`](./iterm/onedark.itermcolors) / [`./iterm/onedarker.itermcolors`](./iterm/onedarker.itermcolors) — color schemes, importable via iTerm2 → Settings → Profiles → Colors → Color Presets → Import.
+
+```bash
+mkdir -p "$HOME/Library/Application Support/iTerm2/DynamicProfiles"
+cp ./iterm/DynamicProfile-default.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/"
+```
+
+## Claude Code
+
+[`./claude/statusline-command.sh`](./claude/statusline-command.sh) is a custom Claude Code status line showing directory, git branch, and context usage. Copy it into `~/.claude/` and reference it from `~/.claude/settings.json`:
+
+```bash
+cp ./claude/statusline-command.sh "$HOME/.claude/statusline-command.sh"
+chmod +x "$HOME/.claude/statusline-command.sh"
+```
+
+A few other settings in `~/.claude/settings.json` worth turning on:
+
+```json
+{
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
+  "showThinkingSummaries": true,
+  "autoUpdates": true,
+  "autoUpdatePlugins": true,
+  "includeCoAuthoredBy": false,
+  "cleanupPeriodDays": 99999,
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/<you>/.claude/statusline-command.sh"
+  }
+}
+```
+
+- `alwaysThinkingEnabled` / `showThinkingSummaries` — keep extended thinking on by default and show a summary in the UI.
+- `effortLevel: high` — biases toward more thorough reasoning.
+- `includeCoAuthoredBy: false` — drops the `Co-Authored-By: Claude` trailer from commits.
+- `cleanupPeriodDays: 99999` — effectively never auto-delete session transcripts.
+- `CLAUDE_CODE_ENABLE_TELEMETRY: "0"` — opt out of telemetry.
+
 ## Docker image for runpod
 
 To build the docker image for runpod, you can run the following command:
